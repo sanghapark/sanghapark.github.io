@@ -2,9 +2,9 @@
 
 * [Introduction](README.md)
 
-- [Data Science](docs/datascience/README.md)
-  - [Machine Learning](docs/datascience/machinelearning/README.md)
-  - [Deep Learning](docs/datascience/deeplearning/README.md)
+- [Data Science](posts/datascience/README.md)
+  - [Machine Learning](posts/datascience/machinelearning/README.md)
+  - [Deep Learning](posts/datascience/deeplearning/README.md)
 
 
-- [Computer Science](docs/computerscience/README.md)
+- [Computer Science](posts/computerscience/README.md)
