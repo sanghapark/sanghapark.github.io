@@ -14,8 +14,8 @@ git pull origin master --rebase
 cp -R _book/* .
 
 # node_modules폴더와 _book폴더를 지워준다.
-git clean -fx node_modules
-git clean -fx _book
+# git clean -fx node_modules
+# git clean -fx _book
 
 # NOQA
 git add .
