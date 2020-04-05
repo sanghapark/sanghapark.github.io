@@ -15,17 +15,23 @@ MLE(Maximum Likelihood Estimation)와 MAP(Maximum a Posteriori)의 차이를 동
 결과가 두 가지 중 하나로만 나오는 것을 **베르누이 시도**(Bernoulli trial)라고 한다. 베르누이 시도의 결과를 확률 변수 $$X$$로 나타낼 때는 일반적으로 성공을 정수 1 ($$X=1$$), 실패를 0 ($$X=0$$)으로 정한다. 이번 동전 던지기 예제에서는 앞면을 1, 뒷면을 0으로 정한다.
 
 베르누이 확률 변수는 0, 1 두 가지 값 중 하나만 가지므로 **이산 확률 변수**이다. 따라서 **확률 질량 함수**(Probability Mass Function)과 누적 분포 함수(Cumulative Distribution Function)으로 정의 할 수 있다. 베르누이 확률 변수는 1이 나올 확률 $$\theta$$라는 하나의 **모수**(parameter)만을 가진다. 0이 나올 확률은 $$1-\theta$$로 정의한다. 베르누이 확률 분포의 확률 질량 함수는 다음과 같다.
+
 $$
-\text{Bern}(x;\theta)=\begin{cases}
+\text{Bern}(x;\theta)=
+\begin{cases}
     \theta & \text{if $$x = 1$$}, \newline
     1-\theta & \text{if $$x = 0$$}
-  \end{cases}
+\end{cases}
 $$
+
 or,
+
 $$
 \text{Bern}(x;\theta) = \theta^x(1-\theta)^{(1-x)}
 $$
+
 어떤 확률 변수가 $$X$$가 베르누이 분포에 의해 발생된다면 다음과 같이 수식으로 쓴다.
+
 $$
 X \sim \text{Bern}(x;\theta)
 $$
