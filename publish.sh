@@ -1,8 +1,8 @@
 # npm install mathjax@2
 
 # gitbook 의존 파일을 설치하고 gitbook 빌드를 돌린다.
-# gitbook install && gitbook build
-gitbook build
+gitbook install && gitbook build
+# gitbook build
 
 # # github pages가 바라보는 gh-pages 브랜치를 만든다.
 # git checkout gh-pages
