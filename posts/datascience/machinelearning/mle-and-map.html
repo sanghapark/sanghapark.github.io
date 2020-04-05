@@ -1,0 +1,510 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MLE & MAP · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-etoc/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../deeplearning/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Data Science
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Machine Learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="mle-and-map.html">
+            
+                <a href="mle-and-map.html">
+            
+                    
+                    MLE & MAP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../deeplearning/">
+            
+                <a href="../deeplearning/">
+            
+                    
+                    Deep Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../computerscience/">
+            
+                <a href="../../computerscience/">
+            
+                    
+                    Computer Science
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >MLE & MAP</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mle--map">MLE &amp; MAP</h1>
+<!-- toc --><div id="toc" class="toc">
+
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#bernoulli-distribution">Bernoulli Distribution</a></li>
+<li><a href="#binomial-distribution">Binomial Distribution</a></li>
+<li><a href="#how-to-make-our-hypothesis-stronger">How to make our hypothesis stronger</a></li>
+<li><a href="#maximum-likelihood-estimation">Maximum Likelihood Estimation</a></li>
+<li><a href="#bayess-theorem">Bayes&apos;s Theorem</a></li>
+<li><a href="#beta-distribution">Beta Distribution</a></li>
+<li><a href="#conjugate-prior">Conjugate Prior</a></li>
+<li><a href="#maximum-a-posteriori-estimation">Maximum a Posteriori Estimation</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+</div><!-- tocstop -->
+<p><strong>Maximum Likelihood Estimation &amp;</strong> <strong>Maximum a Posteriori Estimation</strong></p>
+<hr>
+<h2 id="problem">Problem</h2>
+<p>MLE(Maximum Likelihood Estimation)&#xC640; MAP(Maximum a Posteriori)&#xC758; &#xCC28;&#xC774;&#xB97C; &#xB3D9;&#xC804; &#xB358;&#xC9C0;&#xAE30; &#xC608;&#xC81C;&#xB97C; &#xD1B5;&#xD574; &#xC54C;&#xC544; &#xBCF4;&#xC790;. &#xB3D9;&#xC804;&#xC744; &#xB358;&#xC84C;&#xC744; &#xB54C; &#xC55E;&#xBA74;&#xC774; &#xB098;&#xC62C; &#xD655;&#xB960;&#xC740; &#xC5BC;&#xB9C8;&#xC778;&#xAC00;? &#xB3D9;&#xC804;&#xC774; &#xD558;&#xB098; &#xC8FC;&#xC5B4;&#xC838;&#xC11C; &#xC6B0;&#xB9B0; <script type="math/tex; ">N</script>&#xBC88;&#xC744; &#xB358;&#xC84C;&#xACE0; <script type="math/tex; ">x</script>&#xBC88; &#xC55E;&#xBA74;&#xC774; &#xB098;&#xC654;&#xB2E4;. &#xAC01; &#xC2DC;&#xB3C4;&#xB294; &#xB3C5;&#xB9BD;&#xC801;&#xC778; &#xC0AC;&#xAC74;&#xC774;&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD55C;&#xB2E4;.</p>
+<hr>
+<h2 id="bernoulli-distribution">Bernoulli Distribution</h2>
+<p>&#xACB0;&#xACFC;&#xAC00; &#xB450; &#xAC00;&#xC9C0; &#xC911; &#xD558;&#xB098;&#xB85C;&#xB9CC; &#xB098;&#xC624;&#xB294; &#xAC83;&#xC744; <strong>&#xBCA0;&#xB974;&#xB204;&#xC774; &#xC2DC;&#xB3C4;</strong>(Bernoulli trial)&#xB77C;&#xACE0; &#xD55C;&#xB2E4;. &#xBCA0;&#xB974;&#xB204;&#xC774; &#xC2DC;&#xB3C4;&#xC758; &#xACB0;&#xACFC;&#xB97C; &#xD655;&#xB960; &#xBCC0;&#xC218; $X$&#xB85C; &#xB098;&#xD0C0;&#xB0BC; &#xB54C;&#xB294; &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC131;&#xACF5;&#xC744; &#xC815;&#xC218; 1 ($X=1$), &#xC2E4;&#xD328;&#xB97C; 0 ($X=0$)&#xC73C;&#xB85C; &#xC815;&#xD55C;&#xB2E4;. &#xC774;&#xBC88; &#xB3D9;&#xC804; &#xB358;&#xC9C0;&#xAE30; &#xC608;&#xC81C;&#xC5D0;&#xC11C;&#xB294; &#xC55E;&#xBA74;&#xC744; 1, &#xB4B7;&#xBA74;&#xC744; 0&#xC73C;&#xB85C; &#xC815;&#xD55C;&#xB2E4;.</p>
+<p>&#xBCA0;&#xB974;&#xB204;&#xC774; &#xD655;&#xB960; &#xBCC0;&#xC218;&#xB294; 0, 1 &#xB450; &#xAC00;&#xC9C0; &#xAC12; &#xC911; &#xD558;&#xB098;&#xB9CC; &#xAC00;&#xC9C0;&#xBBC0;&#xB85C; <strong>&#xC774;&#xC0B0; &#xD655;&#xB960; &#xBCC0;&#xC218;</strong>&#xC774;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; <strong>&#xD655;&#xB960; &#xC9C8;&#xB7C9; &#xD568;&#xC218;</strong>(Probability Mass Function)&#xACFC; &#xB204;&#xC801; &#xBD84;&#xD3EC; &#xD568;&#xC218;(Cumulative Distribution Function)&#xC73C;&#xB85C; &#xC815;&#xC758; &#xD560; &#xC218; &#xC788;&#xB2E4;. &#xBCA0;&#xB974;&#xB204;&#xC774; &#xD655;&#xB960; &#xBCC0;&#xC218;&#xB294; 1&#xC774; &#xB098;&#xC62C; &#xD655;&#xB960; $\theta$&#xB77C;&#xB294; &#xD558;&#xB098;&#xC758; <strong>&#xBAA8;&#xC218;</strong>(parameter)&#xB9CC;&#xC744; &#xAC00;&#xC9C4;&#xB2E4;. 0&#xC774; &#xB098;&#xC62C; &#xD655;&#xB960;&#xC740; $1-\theta$&#xB85C; &#xC815;&#xC758;&#xD55C;&#xB2E4;. &#xBCA0;&#xB974;&#xB204;&#xC774; &#xD655;&#xB960; &#xBD84;&#xD3EC;&#xC758; &#xD655;&#xB960; &#xC9C8;&#xB7C9; &#xD568;&#xC218;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.
+<script type="math/tex; mode=display">
+\text{Bern}(x;\theta)=\begin{cases}
+    \theta & \text{if $x = 1$}, \newline
+    1-\theta & \text{if $x = 0$}
+  \end{cases}
+</script>
+or,
+<script type="math/tex; mode=display">
+\text{Bern}(x;\theta) = \theta^x(1-\theta)^{(1-x)}
+</script>
+&#xC5B4;&#xB5A4; &#xD655;&#xB960; &#xBCC0;&#xC218;&#xAC00; $X$&#xAC00; &#xBCA0;&#xB974;&#xB204;&#xC774; &#xBD84;&#xD3EC;&#xC5D0; &#xC758;&#xD574; &#xBC1C;&#xC0DD;&#xB41C;&#xB2E4;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; &#xC218;&#xC2DD;&#xC73C;&#xB85C; &#xC4F4;&#xB2E4;.
+<script type="math/tex; mode=display">
+X \sim \text{Bern}(x;\theta)
+</script></p>
+<hr>
+<h2 id="binomial-distribution">Binomial Distribution</h2>
+<p>&#xC131;&#xACF5; &#xD655;&#xB960;&#xC774; $\theta$&#xC778; &#xBCA0;&#xB974;&#xB204;&#xC774; &#xC2DC;&#xB3C4;&#xB97C; $N$&#xBC88; &#xC2DC;&#xB3C4;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xC0DD;&#xAC01; &#xD574;&#xBCF4;&#xC790;. $N$&#xBC88; &#xC911; &#xC131;&#xACF5;&#xD55C; &#xD69F;&#xC218;&#xB97C; &#xD655;&#xB960;&#xBCC0;&#xC218; $X$ &#xB77C;&#xACE0; &#xD55C;&#xB2E4;&#xBA74; $X$&#xC758; &#xAC12;&#xC740; 0&#xBD80;&#xD130; $N$&#xAE4C;&#xC9C0;&#xC758; &#xC815;&#xC218; &#xC911; &#xD558;&#xB098;&#xAC00; &#xB420; &#xAC83;&#xC774;&#xB2E4;.
+<script type="math/tex; mode=display">
+X \sim \text{Bin}(x; N, \theta)
+</script>
+&#xC774;&#xD56D; &#xBD84;&#xD3EC; &#xD655;&#xB960; &#xBCC0;&#xC218; $X$&#xC758; &#xD655;&#xB960; &#xC9C8;&#xB7C9; &#xD568;&#xC218;&#xB97C; &#xAD6C;&#xD574;&#xBCF4;&#xC790;. &#xC6B0;&#xC120; &#xBCA0;&#xB974;&#xB204;&#xC774; &#xD655;&#xB960; &#xBD84;&#xD3EC;&#xB97C; &#xB530;&#xB978; &#xD655;&#xB960; &#xBCC0;&#xC218; $Y$&#xB97C; &#xAC00;&#xC815;&#xD55C;&#xB2E4;.
+<script type="math/tex; mode=display">
+Y \sim \text{Bern}(y; \theta)
+</script>
+&#xC774; &#xD655;&#xB960; &#xBCC0;&#xC218;&#xC758; N&#xAC1C;&#xC758; &#xD45C;&#xBCF8;&#xC744; $y_1, y_2, \cdots, y_N$&#xB77C;&#xACE0; &#xD558;&#xC790;. &#xC774; &#xAC12;&#xC740; 0(&#xC2E4;&#xD328;) &#xC544;&#xB2C8;&#xBA74; 1(&#xC131;&#xACF5;) &#xC774;&#xB77C;&#xB294; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; $N$&#xBC88; &#xC911; &#xC131;&#xACF5;&#xD55C; &#xD69F;&#xC218;&#xB294; $N$&#xAC1C;&#xC758; &#xD45C;&#xBCF8; &#xAC12;&#xC758; &#xD569;(sum)&#xC774;&#xB2E4;.
+<script type="math/tex; mode=display">
+x = \sum\_{i=1}^{N}y\_i
+</script>
+&#xBCA0;&#xB974;&#xB204;&#xC774; &#xBD84;&#xD3EC;&#xB97C; &#xB530;&#xB974;&#xB294; &#xD655;&#xB960;&#xBCC0;&#xC218; $Y$&#xC758; &#xD655;&#xB960; &#xC9C8;&#xB7C9; &#xD568;&#xC218;&#xB97C; &#xB300;&#xC785;&#xD558;&#xC5EC; &#xC815;&#xB9AC;&#xD558;&#xBA74; &#xC774;&#xD56D; &#xBD84;&#xD3EC; &#xD655;&#xB960;&#xBCC0;&#xC218; $X$&#xC758; &#xD655;&#xB960; &#xC9C8;&#xB7C9; &#xD568;&#xC218;&#xB294; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.
+<script type="math/tex; mode=display">
+\text{Bin}(x;N,\theta) = \binom{N}{x}\theta^x(1-\theta)^{N-x}
+</script></p>
+<hr>
+<h2 id="how-to-make-our-hypothesis-stronger">How to make our hypothesis stronger</h2>
+<p>&#xB3D9;&#xC804;&#xC744; &#xB358;&#xC838; &#xB098;&#xC628; &#xACB0;&#xACFC;&#xBB3C;&#xC744; &#xB354;&#xC6B1; &#xC798; &#xC124;&#xBA85; &#xD558;&#xB294; &#xAC00;&#xC815;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xBC29;&#xBC95;&#xC740; &#xBB34;&#xC5C7;&#xC774; &#xC788;&#xC744;&#xAE4C;? \</p>
+<pre><code>1. &#xC774;&#xD56D;&#xBD84;&#xD3EC;&#xBCF4;&#xB2E4; &#xB354;&#xC6B1; &#xC798; &#xC124;&#xBA85; &#xD560; &#xC218; &#xC788;&#xB294; &#xBD84;&#xD3EC;&#xB97C; &#xCC3E;&#xC544; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;. \
+2. &#xC774;&#xD56D;&#xBD84;&#xD3EC;&#xB97C; &#xB530;&#xB978; &#xB2E4;&#xB294; &#xAC00;&#xC815;&#xC744; &#xD55C;&#xB2E4;&#xBA74; &#xC8FC;&#xC5B4;&#xC9C4; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC00;&#xC7A5; &#xC798; &#xC124;&#xBA85; &#xD560; &#xC218; &#xC788;&#xB294; &#xC774;&#xD56D;&#xBD84;&#xD3EC;&#xC758; &#xBAA8;&#xC218;&#xB97C; &#xCC3E;&#xB294;&#xB2E4;.
+</code></pre><hr>
+<h2 id="maximum-likelihood-estimation">Maximum Likelihood Estimation</h2>
+<p>&#xAD00;&#xCE21;&#xB41C; &#xB370;&#xC774;&#xD130;&#xB4E4;&#xC758; &#xD655;&#xB960;&#xC744; &#xCD5C;&#xB300;&#xD654; &#xD558;&#xB294; $\theta$&#xB97C; &#xCC3E;&#xB294; &#xAC83;&#xC774;&#xB2E4;.
+<script type="math/tex; mode=display">
+\hat{\theta} = \underset{\theta}{\arg\max}P(D \mid \theta)
+</script>
+&#xC5B4;&#xB5A4; $\theta$&#xAC00; &#xC8FC;&#xC5B4;&#xC84C;&#xC744;&#xB54C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xAD00;&#xCE21; &#xB420; &#xD655;&#xB960;,$P(D \mid \theta)$, &#xC744; &#xCD5C;&#xB300;&#xD654; &#xD558;&#xB294; $\theta$&#xB97C; &#xCC3E;&#xC544;&#xB0B4;&#xB294; &#xC218;&#xC2DD;&#xC774;&#xB2E4;.</p>
+<p>&#xADF8;&#xB7FC; &#xC774;&#xC81C; &#xB3D9;&#xC804; &#xB358;&#xC9C0;&#xAE30; &#xC608;&#xC81C;&#xC5D0; &#xC704;&#xC5D0; MLE&#xB97C; &#xC801;&#xC6A9;&#xD574;&#xBCF4;&#xC790;.
+<script type="math/tex; mode=display">
+\begin{equation} \label{eq1}
+\begin{split}
+\hat{\theta}
+& = \underset{\theta}{\arg\max}\, P(D \mid \theta) \newline
+& = \underset{\theta}{\arg\max}\, \theta^x(1-\theta)^{N-x}
+\end{split}
+\end{equation}
+</script></p>
+<p>&#xC218;&#xC2DD;&#xC5D0; &#xB85C;&#xADF8;&#xB97C; &#xC50C;&#xC6CC; &#xBBF8;&#xBD84; &#xD558;&#xAE30; &#xC27D;&#xAC8C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC8FC;&#xC790;. &#xB85C;&#xADF8;&#xB294; &#xB2E8;&#xC870; &#xD568;&#xC218; &#xC774;&#xBBC0;&#xB85C; &#xC218;&#xC2DD;&#xC5D0; &#xB85C;&#xADF8; &#xBCC0;&#xD658;&#xC744; &#xC801;&#xC6A9;&#xD574;&#xB3C4; &#xCD5C;&#xACE0;&#xC810;/&#xCD5C;&#xC18C;&#xC810; &#xC704;&#xCE58;&#xB294; &#xBCC0;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.
+<script type="math/tex; mode=display">
+\begin{align}
+\hat{\theta}
+& = \underset{\theta}{\arg\max}\,\ln P(D\mid \theta) \newline
+& = \underset{\theta}{\arg\max}\,\ln \big(\theta^x(1-\theta)^{N-x}\big) \newline
+& = \underset{\theta}{\arg\max}\, \big(x\ln\theta + (N-x)\ln(1-\theta)\big)
+\end{align}
+</script></p>
+<p>&#xD655;&#xB960;, $P(D\mid\theta)$,&#xB97C; &#xADF9;&#xB300;&#xD654;&#xD558;&#xAE30; &#xC704;&#xD558;&#xC5EC; &#xC218;&#xC2DD;&#xC744; 1&#xCC28; &#xBBF8;&#xBD84; &#xD558;&#xACE0; 0&#xC73C;&#xB85C; &#xC138;&#xD305;&#xD55C;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; $\theta$&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xD480;&#xBA74; &#xD655;&#xB960;&#xC744; &#xADF9;&#xB300;&#xD654;&#xD558;&#xB294; &#xBAA8;&#xC218; $\theta$&#xB97C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xB2E4;.
+<script type="math/tex; mode=display">
+\begin{align}
+0
+& = \frac{d}{d\theta}\big(x\ln\theta + (N-x)\ln(1-\theta)\big) \newline
+& = \frac{x}{\theta} - \frac{N-x}{1-\theta}
+\end{align}
+</script>
+$\theta$&#xC5D0; &#xB300;&#xD574; &#xD480;&#xBA74;
+<script type="math/tex; mode=display">
+\begin{align}
+\theta
+& = \frac{x}{(N-x)+x}\newline
+& = \frac{x}{N}
+\end{align}
+</script>
+&#xC989;, &#xC6B0;&#xB9AC;&#xAC00; &#xC120;&#xD0DD;&#xD55C; &#xC774;&#xD56D; &#xBD84;&#xD3EC; &#xBAA8;&#xD615;&#xC758; &#xBAA8;&#xC218; $\theta$&#xAC00; $\frac{x}{N}$&#xC77C; &#xB54C;, $N$&#xBC88; &#xC2DC;&#xB3C4;&#xC5D0; $x$&#xBC88; &#xC55E;&#xBA74;&#xC774; &#xB098;&#xC624;&#xB294; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC0DD;&#xC131; &#xB420; &#xAC00;&#xB2A5;&#xC131;&#xC774; &#xAC00;&#xC7A5; &#xD06C;&#xB2E4;. &#xC774;&#xAC83;&#xC774; MLE &#xAD00;&#xC810;&#xC5D0;&#xC11C; &#xBCF8; &#xBAA8;&#xC218; &#xCD94;&#xC815; &#xBC29;&#xBC95;&#xC774;&#xB2E4;.</p>
+<p>&#xC6B0;&#xB9AC;&#xB294; $\theta$&#xB97C; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xC815;&#xD574;&#xC9C4; &#xD558;&#xB098;&#xC758; &#xAC12;&#xC73C;&#xB85C; &#xC0DD;&#xAC01;&#xD558;&#xC9C0; &#xC54A;&#xACE0; $\theta$&#xC5D0; &#xB300;&#xD55C; &#xC0AC;&#xC804; &#xC815;&#xBCF4;(&#xBBFF;&#xC74C;)&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xBAA8;&#xC218; $\theta$&#xC5D0; &#xB300;&#xD55C; &#xCD94;&#xC815;&#xC744; &#xC2DC;&#xC791; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xC0AC;&#xC804; &#xC815;&#xBCF4;&#xB85C; &#xC55E;&#xBA74;&#xC774; &#xB098;&#xC62C; &#xD655;&#xB960;&#xC744; 50:50&#xC73C;&#xB85C; &#xC0DD;&#xAC01; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCC98;&#xC74C; &#xBA87;&#xBC88; &#xB3D9;&#xC804; &#xB358;&#xC9C0;&#xAE30;&#xB97C; &#xC2DC;&#xB3C4; &#xD574;&#xC11C; &#xB098;&#xC628; &#xD655;&#xB960;&#xC744; &#xC0AC;&#xC804; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xBBF8;&#xD55C; $\theta$&#xB97C; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; &#xC218;&#xC2DD;&#xC744; &#xC0AC;&#xC6A9; &#xD558;&#xC5EC; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<hr>
+<h2 id="bayess-theorem">Bayes&apos;s Theorem</h2>
+<p><script type="math/tex; mode=display">
+\begin{align}
+& P(\theta \mid D) = \frac{P(D \mid \theta)P(\theta)}{P(D)} \newline \newline
+& Posterior = \frac{Likelihood * Prior\,Knowledge}{Normalizing\,Constant}
+\end{align}
+</script></p>
+<p>&#xC6B0;&#xB9AC;&#xB294; &#xC774;&#xBBF8; $P(D\mid\theta) = \theta^x(1-\theta)^{N-x}$&#xB85C; &#xC815;&#xC758;&#xB97C; &#xC704;&#xC5D0;&#xC11C; &#xD558;&#xC600;&#xB2E4;. $P(\theta)$&#xB294; &#xB3D9;&#xC804;&#xC744; &#xBA87;&#xBC88; &#xB358;&#xC838;&#xBCF4;&#xACE0; &#xACC4;&#xC0B0;&#xD55C; &#xC55E;&#xBA74;&#xC774; &#xB098;&#xC62C; &#xD655;&#xB960;&#xC774; 50%&#xC77C;&#xAEBC;&#xB77C;&#xB294; &#xC0AC;&#xC804; &#xC815;&#xBCF4;&#xC774;&#xB2E4;. &#xBD84;&#xBAA8;&#xB294; &#xB2E8;&#xC21C;&#xD788; Normalizing Constant&#xC774;&#xBBC0;&#xB85C; &#xBB34;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xB2E4;. &#xC774;&#xC81C; $P(D\mid\theta)$&#xB97C; &#xAD6C;&#xD574;&#xBCF4;&#xC790;.</p>
+<p><script type="math/tex; mode=display">
+P(\theta\mid D) \propto P(D\mid\theta)P(\theta)
+</script></p>
+<p>&#xADF8;&#xC804;&#xC5D0; &#xC6B0;&#xB9AC;&#xB294; &#xC6B0;&#xC120; $P(\theta)$&#xB97C; &#xC798; &#xC815;&#xC758; &#xD5E4;&#xC57C; &#xD55C;&#xB2E4;. $P(D|\theta)$&#xB97C; &#xC774;&#xD56D;&#xBD84;&#xD3EC;&#xB85C; &#xC798; &#xC815;&#xC758; &#xD558;&#xC600;&#xB4EF;&#xC774; $P(\theta)$&#xB3C4; &#xC5B4;&#xB5A4; &#xD655;&#xB960; &#xBD84;&#xD3EC;&#xB85C; &#xC815;&#xC758;&#xB97C; &#xD574;&#xC8FC;&#xC5B4;&#xC57C;&#xD55C;&#xB2E4;. &#xBCA0;&#xD0C0; &#xBD84;&#xD3EC;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC790;.</p>
+<hr>
+<h2 id="beta-distribution">Beta Distribution</h2>
+<p>0&#xC5D0;&#xC11C; 1&#xC0AC;&#xC774;&#xC758; &#xAC12;&#xC744; &#xAC00;&#xC9C0;&#xB294; Cumulative Mass Function&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC5B4;&#xC11C; &#xD655;&#xB960;&#xC758; &#xC131;&#xACA9;&#xC744; &#xC798; &#xBB18;&#xC0AC; &#xD560; &#xC218; &#xC788;&#xB2E4;.
+<script type="math/tex; mode=display">
+\begin{align}
+P(\theta) & = \frac{\theta^{\alpha -1}(1-\theta)^{\beta-1}}{B(\alpha,\beta)} \newline \newline
+B(\alpha,\beta) & = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} \newline \newline
+\Gamma(\alpha) & = (\alpha - 1)!
+\end{align}
+</script></p>
+<hr>
+<h2 id="conjugate-prior">Conjugate Prior</h2>
+<p>&#xC774;&#xC81C; &#xC0AC;&#xC804;&#xC815;&#xBCF4;&#xC640; likelihood&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC0AC;&#xD6C4; &#xBD84;&#xD3EC;&#xB97C; &#xAD6C;&#xD574;&#xBCF4;&#xC790;. $B(\alpha, \beta)$&#xB294; $\alpha$&#xC640; $\beta$&#xAC00; &#xACB0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xB294; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;&#xB294; &#xC0C1;&#xC218;&#xAC00;&#xB41C;&#xB2E4;. $\theta$&#xC5D0; &#xC758;&#xC874;&#xD558;&#xB294; &#xD56D;&#xC774; &#xC544;&#xB2C8;&#xAE30;&#xC5D0; &#xBB34;&#xC2DC; &#xD560; &#xC218; &#xC788;&#xB2E4;.
+<script type="math/tex; mode=display">
+\begin{align}
+P(\theta\mid D)
+& \propto P(D\mid\theta)P(\theta) \newline
+& \propto \theta^x(1-\theta)^{N-x}\theta^{\alpha -1}(1-\theta)^{\beta-1} \newline
+& = \theta^{x + \alpha -1}(1-\theta)^{N-x+\beta-1}
+\end{align}
+</script></p>
+<p>&#xC0AC;&#xC804;&#xBD84;&#xD3EC;&#xC640; &#xC0AC;&#xD6C4; &#xBD84;&#xD3EC;&#xAC00; &#xB3D9;&#xC77C;&#xD55C; &#xBD84;&#xD3EC;&#xC871;&#xC5D0; &#xC18D;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCFC;&#xC218;&#xC788;&#xB2E4;. &#xC774;&#xB54C; &#xC0AC;&#xC804;&#xBD84;&#xD3EC;&#xB97C;  <strong>Conjugate Prior</strong>&#xB77C;&#xACE0; &#xD55C;&#xB2E4;.</p>
+<hr>
+<h2 id="maximum-a-posteriori-estimation">Maximum a Posteriori Estimation</h2>
+<p>&#xC774;&#xC81C; &#xC8FC;&#xC5B4;&#xC9C4; &#xC0AC;&#xD6C4; &#xBD84;&#xD3EC;&#xC5D0;&#xC11C; $\theta$&#xC5D0; &#xB300;&#xD574; &#xADF9;&#xB300;&#xD654;&#xB97C; &#xD558;&#xC790;.
+<script type="math/tex; mode=display">
+\begin{align}
+\hat\theta
+& = \underset{\theta}{\arg\max}\, P(\theta\mid D) \newline
+& = \underset{\theta}{\arg\max}\, \theta^{x + \alpha -1}(1-\theta)^{N-x+\beta-1}
+\end{align}
+</script></p>
+<p>&#xC704;&#xC758; &#xC2DD;&#xC744; &#xBBF8;&#xBD84; &#xD558;&#xACE0; 0&#xC744;&#xB85C; &#xC138;&#xD305;&#xD558;&#xACE0; $\theta$&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xD480;&#xBA74; &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xB2E4;.
+<script type="math/tex; mode=display">
+\begin{align}
+\hat\theta
+& = \frac{x+\alpha-1}{x+\alpha+(N-x)+\beta-2} \newline
+& = \frac{x+\alpha-1}{\alpha+N+\beta-2}
+\end{align}
+</script></p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\text{MLE:}\quad & \hat\theta = \frac{x}{N}\newline
+\text{MAP:}\quad & \hat\theta = \frac{x+\alpha-1}{\alpha+N+\beta-2}
+\end{align}
+</script></p>
+<p>MLE &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xB41C; &#xC218;&#xC2DD;&#xACFC; MAP &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xCD94;&#xB860;&#xB41C; &#xC218;&#xC2DD;&#xC774; &#xB9CE;&#xC774; &#xB2EC;&#xB77C; &#xBCF4;&#xC774;&#xC9C0;&#xB9CC; MAP &#xC218;&#xC2DD;&#xC5D0;&#xC11C; $N$&#xC774; &#xCEE4;&#xC9C8; &#xC218;&#xB85D; $\alpha$&#xC640; $\beta$&#xC758; &#xC601;&#xD5A5;&#xC740; &#xC18C;&#xBA78; &#xD560; &#xAC83;&#xC774;&#xACE0; MLE&#xC640; MAP&#xC758; &#xAC12;&#xB4E4;&#xC740; &#xAC19;&#xC544; &#xC9C8; &#xAC83;&#xC774;&#xB2E4;. $\alpha$&#xC640; $\beta$&#xC640; &#xAC19;&#xC740; &#xCD08;&#xBAA8;&#xC218;(Hyperparameter)&#xB294; &#xBD84;&#xC11D;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xC758; &#xC8FC;&#xAD00;&#xC801;&#xC73C;&#xB85C; &#xC815;&#xD574;&#xC9C8; &#xC218;&#xC788;&#xB2E4;.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Machine Learning">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../deeplearning/" class="navigation navigation-next " aria-label="Next page: Deep Learning">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MLE & MAP","level":"1.2.1.1","depth":3,"next":{"title":"Deep Learning","level":"1.2.2","depth":2,"path":"posts/datascience/deeplearning/README.md","ref":"posts/datascience/deeplearning/README.md","articles":[]},"previous":{"title":"Machine Learning","level":"1.2.1","depth":2,"path":"posts/datascience/machinelearning/README.md","ref":"posts/datascience/machinelearning/README.md","articles":[{"title":"MLE & MAP","level":"1.2.1.1","depth":3,"path":"posts/datascience/machinelearning/mle-and-map.md","ref":"posts/datascience/machinelearning/mle-and-map.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","collapsible-menu","etoc","splitter"],"pluginsConfig":{"collapsible-menu":{},"etoc":{"h2lb":3,"header":1,"maxdepth":4,"mindepth":3,"notoc":false},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/datascience/machinelearning/mle-and-map.md","mtime":"2020-04-05T10:01:02.505Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-05T10:02:20.824Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-collapsible-menu/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-etoc/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
