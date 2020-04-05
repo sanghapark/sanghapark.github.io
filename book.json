@@ -1,3 +1,3 @@
 {
-    "plugins": ["katex", "collapsible-menu", "etoc", "splitter"]
+    "plugins": ["mathjax", "collapsible-menu", "etoc", "splitter"]
 }
