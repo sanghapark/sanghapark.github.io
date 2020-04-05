@@ -1,3 +1,8 @@
 {
-    "plugins": ["mathjax", "collapsible-menu", "etoc", "splitter"]
+    "plugins": ["mathjax", "collapsible-menu", "etoc", "splitter"],
+    "pluginsConfig": {
+        "mathjax":{
+            "forceSVG": true
+        }
+    }
 }
