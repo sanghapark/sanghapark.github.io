@@ -1,6 +1,4 @@
-<script>
-MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-</script>
+<script> MathJax.Hub.Queue(["Typeset",MathJax.Hub]); </script>
 # MLE & MAP
 
 **Maximum Likelihood Estimation &** **Maximum a Posteriori Estimation**
