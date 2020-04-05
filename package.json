@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Sang-Ha Park Data Scientist",
+  "main": "index.js",
+  "dependencies": {
+    "mathjax": "^2.7.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanghapark/sanghapark.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanghapark/sanghapark.github.io/issues"
+  },
+  "homepage": "https://github.com/sanghapark/sanghapark.github.io#readme"
+}
