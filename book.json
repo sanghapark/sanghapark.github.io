@@ -1,0 +1,3 @@
+{
+    "plugins": ["mathjax", "collapsible-menu", "etoc", "splitter"]
+}
